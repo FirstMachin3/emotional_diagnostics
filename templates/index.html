@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotional Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="https://codeplz.fun" class="home-button"><i class="fas fa-home"></i></a>
+            <h1>Emotional Analysis</h1>
+        </div>
+        <div class="main">
+            <form method="POST">
+                <label for="text_snippet">Enter a text snippet:</label>
+                <input type="text" id="text_snippet" name="text_snippet">
+                <button type="submit">Predict Emotion</button>
+            </form>
+            {% if emotion %}
+            <div class="result {{ emotion_class }}">
+                <p>{{ emotion }}</p>
+            </div>
+            {% endif %}
+        </div>
+        <div class='box'>
+            <div class='wave -one'></div>
+            <div class='wave -two'></div>
+            <div class='wave -three'></div>
+          </div>
+    </div>
+</body>
+</html>
